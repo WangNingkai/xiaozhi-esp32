@@ -1,0 +1,625 @@
+# Instincts generated from https://github.com/WangNingkai/xiaozhi-esp32
+# Generated: 2026-04-01T05:12:14.958Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: xiaozhi-esp32-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Commit Length
+
+## Action
+
+Write moderate-length commit messages (~52 characters)
+
+## Evidence
+
+- Average commit message length: 52 chars
+- Based on 200 commits
+
+---
+id: xiaozhi-esp32-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: xiaozhi-esp32-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: xiaozhi-esp32-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: xiaozhi-esp32-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: xiaozhi-esp32-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~14x per month
+- Files: main/*
+
+---
+id: xiaozhi-esp32-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/**/*
+
+---
+id: xiaozhi-esp32-workflow-add-new-board-support
+trigger: "when doing add new board support"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Workflow Add New Board Support
+
+## Action
+
+Follow the add-new-board-support workflow:
+1. Create new board directory under main/boards/<vendor>/<board-name>/
+2. Add config.h, config.json, and main source file (e.g., <board-name>.cc)
+3. Add README.md for the board
+4. Optionally add extra files (e.g., led_strip_control.cc/h, power_manager.h, lcd_init_cmds.h)
+5. Update main/CMakeLists.txt and main/Kconfig.projbuild to include the new board
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: main/boards/*/<board-name>/config.h, main/boards/*/<board-name>/config.json, main/boards/*/<board-name>/*.cc
+
+---
+id: xiaozhi-esp32-workflow-fix-or-update-board-configurations
+trigger: "when doing fix or update board configurations"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Workflow Fix Or Update Board Configurations
+
+## Action
+
+Follow the fix-or-update-board-configurations workflow:
+1. Edit one or more .cc files for affected boards
+2. Edit config.json or config.h as needed
+3. Optionally update main/idf_component.yml if dependencies are affected
+4. Commit with a message referencing the boards and the fix
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: main/boards/*/*/*.cc, main/boards/*/*/config.json, main/boards/*/*/config.h
+
+---
+id: xiaozhi-esp32-workflow-bump-project-version
+trigger: "when doing bump project version"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Workflow Bump Project Version
+
+## Action
+
+Follow the bump-project-version workflow:
+1. Edit CMakeLists.txt to update the PROJECT_VER
+2. Optionally update scripts/release.py or related build/release scripts
+3. Commit with a message indicating the new version
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: CMakeLists.txt, main/CMakeLists.txt, scripts/release.py
+
+---
+id: xiaozhi-esp32-workflow-update-dependencies
+trigger: "when doing update dependencies"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Workflow Update Dependencies
+
+## Action
+
+Follow the update-dependencies workflow:
+1. Edit main/idf_component.yml to update dependency versions
+2. Optionally update related configuration files (e.g., partitions/v2/4m.csv)
+3. Commit with a message referencing updated dependencies
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: main/idf_component.yml, partitions/v2/4m.csv
+
+---
+id: xiaozhi-esp32-workflow-update-readme-or-docs
+trigger: "when doing update readme or docs"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Workflow Update Readme Or Docs
+
+## Action
+
+Follow the update-readme-or-docs workflow:
+1. Edit README.md and/or language-specific README files
+2. Optionally edit board-specific README.md files
+3. Commit with a message referencing documentation update
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: README.md, README_*.md, main/boards/*/*/README.md
+
+---
+id: xiaozhi-esp32-instinct-file-naming-camelCase
+trigger: "When creating or renaming a source file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase (e.g., myFile.cc)
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: xiaozhi-esp32-instinct-function-naming-camelCase
+trigger: "When defining a function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase (e.g., doSomething())
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: xiaozhi-esp32-instinct-class-naming-PascalCase
+trigger: "When defining a class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase (e.g., MyClass)
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: xiaozhi-esp32-instinct-constant-naming-screaming-snake-case
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Constant Naming Screaming Snake Case
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE (e.g., MAX_SIZE)
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: xiaozhi-esp32-instinct-import-style-relative
+trigger: "When importing modules in Python code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Import Style Relative
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: xiaozhi-esp32-instinct-export-style-named
+trigger: "When exporting functions or classes"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Export Style Named
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: xiaozhi-esp32-instinct-test-location-separate
+trigger: "When adding or updating tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Test Location Separate
+
+## Action
+
+Place test files in a separate directory from source code
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: separate
+
+---
+id: xiaozhi-esp32-instinct-test-after-feature
+trigger: "When implementing a new feature"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Test After Feature
+
+## Action
+
+Add tests for the new feature immediately after implementation
+
+## Evidence
+
+- Workflows.feature-development.commitSequence: Add tests for feature
+
+---
+id: xiaozhi-esp32-instinct-test-before-refactor
+trigger: "When preparing to refactor code"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Test Before Refactor
+
+## Action
+
+Ensure all tests pass before performing the refactor
+
+## Evidence
+
+- Workflows.refactoring.commitSequence: Ensure tests pass before refactor
+
+---
+id: xiaozhi-esp32-instinct-test-after-refactor
+trigger: "After refactoring code"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Test After Refactor
+
+## Action
+
+Verify that all tests still pass
+
+## Evidence
+
+- Workflows.refactoring.commitSequence: Verify tests still pass
+
+---
+id: xiaozhi-esp32-instinct-commit-prefix-feat-fix
+trigger: "When writing a commit message for a feature or bugfix"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Commit Prefix Feat Fix
+
+## Action
+
+Prefix the commit message with 'feat:' for features or 'fix:' for bugfixes
+
+## Evidence
+
+- Commits: 'feat: adapt to esp_codec_dev>=1.5.5 (#1878)'
+- 'fix: Default configuration of GT911'
+
+---
+id: xiaozhi-esp32-instinct-commit-length-50
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Commit Length 50
+
+## Action
+
+Keep the commit message around 50 characters on average
+
+## Evidence
+
+- Commits averageLength: 52
+
+---
+id: xiaozhi-esp32-instinct-commit-reference-boards-in-fix
+trigger: "When fixing or updating board configurations"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Commit Reference Boards In Fix
+
+## Action
+
+Reference the affected boards in the commit message
+
+## Evidence
+
+- Workflows.fix-or-update-board-configurations.commitSequence: Commit with a message referencing the boards and the fix
+
+---
+id: xiaozhi-esp32-instinct-add-new-board-support
+trigger: "When adding support for a new hardware board"
+confidence: 0.98
+domain: workflow
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Add New Board Support
+
+## Action
+
+Create a new directory under main/boards/<vendor>/<board-name>/, add config.h, config.json, main source file, README.md, optional extra files, and update main/CMakeLists.txt and main/Kconfig.projbuild
+
+## Evidence
+
+- Workflow: add-new-board-support
+- Commits: 'Add freenove-esp32s3-display-2.8-lcd (#1876)'
+
+---
+id: xiaozhi-esp32-instinct-fix-or-update-board-configurations
+trigger: "When fixing or updating configuration or source files for multiple boards"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Fix Or Update Board Configurations
+
+## Action
+
+Edit .cc, config.json, config.h as needed, optionally update main/idf_component.yml, and commit referencing the boards and the fix
+
+## Evidence
+
+- Workflow: fix-or-update-board-configurations
+- Commits: 'fix: Default configuration of GT911'
+
+---
+id: xiaozhi-esp32-instinct-bump-project-version
+trigger: "When releasing a new version or updating the version number"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Bump Project Version
+
+## Action
+
+Edit CMakeLists.txt (and optionally scripts/release.py), and commit indicating the new version
+
+## Evidence
+
+- Workflow: bump-project-version
+- Commits: 'Bump project version to 2.2.3 and fix release.py (#1771)'
+
+---
+id: xiaozhi-esp32-instinct-update-dependencies
+trigger: "When updating third-party library or component versions"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Update Dependencies
+
+## Action
+
+Edit main/idf_component.yml and optionally related config files, then commit referencing updated dependencies
+
+## Evidence
+
+- Workflow: update-dependencies
+- Commits: 'chore: Update esp-wifi-connect version in idf_component.yml and refac… (#1769)'
+
+---
+id: xiaozhi-esp32-instinct-update-readme-or-docs
+trigger: "When updating documentation or correcting links"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: WangNingkai/xiaozhi-esp32
+---
+
+# Xiaozhi Esp32 Instinct Update Readme Or Docs
+
+## Action
+
+Edit README.md, language-specific README files, and optionally board-specific README.md files, then commit referencing documentation update
+
+## Evidence
+
+- Workflow: update-readme-or-docs
+- Commits: 'Add README.md for the board'
+
